@@ -333,8 +333,8 @@ $$
 \end{aligned}
 $$
 
-es decir, las dos funciones $u$ y $v$ son continuas en el punto ( $x_{\mathrm{O}}, y_{\mathrm{O}}$ ).\\
-Recíprocamente si $u(x, y)$ y $v(x, y)$ son ambas continuas en ( $x_{\mathrm{O}}, y_{\mathrm{O}}$ ), entonces dado $\varepsilon>0$ existe un $\eta>0$ tal que
+es decir, las dos funciones $u$ y $v$ son continuas en el punto ( $x_0, y_0$ ).\\
+Recíprocamente si $u(x, y)$ y $v(x, y)$ son ambas continuas en ( $x_0, y_0$ ), entonces dado $\varepsilon>0$ existe un $\eta>0$ tal que
 
 $$
 \left.\left|x-x_{0}\right| \leqslant \eta\right\} \Rightarrow\left\{\begin{array}{l}
@@ -2142,7 +2142,7 @@ $$
 Pasando al límite para $m$ tendiendo a infinito en (14-3) se tiene
 
 $$
-\left|f(z)-f_{n}(z)\right| \leqslant \varepsilon \quad \text { para } n \geqslant n_{\mathrm{o}},
+\left|f(z)-f_{n}(z)\right| \leqslant \varepsilon \quad \text { para } n \geqslant n_0,
 $$
 
 luego las $f_{n} \quad$ convergen uniformemente hacia $f$ en $K$ lo que implica que $f$ es continua.
@@ -2239,7 +2239,7 @@ y sumando las dos últimas igualdades se tiene
 
 
 \begin{gather*}
-u\left(x_{\mathrm{o} 2} y_{\mathrm{o}}\right)+i v\left(x_{\mathrm{o} 2} y_{\mathrm{o}}\right)=\frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{R e^{i \varphi}+r_{\mathrm{o}} e^{i \varphi_{\mathrm{o}}}}{R e^{i \varphi}-r_{\mathrm{o}} e^{i \varphi_{\mathrm{o}}}} d \varphi+ \\
+u\left(x_{\mathrm{o} 2} y_0\right)+i v\left(x_{\mathrm{o} 2} y_0\right)=\frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{R e^{i \varphi}+r_0 e^{i \varphi_0}}{R e^{i \varphi}-r_0 e^{i \varphi_0}} d \varphi+ \\
 +\frac{i}{2 \pi} \int_{0}^{2 \pi} v(\varphi) d \varphi \tag{$15\cdot3$}
 \end{gather*}
 
@@ -2280,7 +2280,7 @@ Finalmente igualando las partes reales de (15-3) se obtiene
 
 
 \begin{equation*}
-u\left(x_{\mathrm{O} 2} y_{\mathrm{O}}\right)=\frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{\left(R^{2}-r_{\mathrm{O}}^{2}\right) u(\varphi)}{R^{2}+r_{0}^{2}-2 R r_{0} \cos \left(\varphi-\varphi_{0}\right)} d \varphi \tag{15-4}
+u\left(x_{\mathrm{O} 2} y_0\right)=\frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{\left(R^{2}-r_0^{2}\right) u(\varphi)}{R^{2}+r_{0}^{2}-2 R r_{0} \cos \left(\varphi-\varphi_{0}\right)} d \varphi \tag{15-4}
 \end{equation*}
 
 
@@ -2516,7 +2516,7 @@ $$
 luego poniendo $f(0)=1 / 2$ se obtiene una función entera. Es de demostración inmediata el siguiente
 
 \section*{Thorema 1}
-Si $\mathrm{z}_{\mathrm{o}}$ es una singularidad evitable de f , la función està acotada cın un entorno del punto $\mathrm{z}_{0}$.
+Si $\mathrm{z}_0$ es una singularidad evitable de f , la función està acotada cın un entorno del punto $\mathrm{z}_{0}$.
 
 \section*{- MATEMATICA AVANZADA PARA LA FISICA}
 El interés de este teorema reside en que, como veremos más adelante, su recíproco es cierto.
@@ -2565,7 +2565,7 @@ y el scgundo factor es una función holomorfa y no nula en $z_{0}$.\\
 También de (17-4), se deduce inmediatamente el
 
 \section*{TEORI:MA 3}
-Si $\mathrm{z}_{\mathrm{o}}$ es un polo de f , se tiene
+Si $\mathrm{z}_0$ es un polo de f , se tiene
 
 
 \begin{equation*}
@@ -2969,7 +2969,7 @@ convergente para todo $z$. Como $f$ es además holomorfa en el infinito, no pued
 
 \section{Residuos}
 \section*{DEFINICION 1:}
-Sea funa función holomorfa en un disco D reducido: $0<\left|z-z_{0}\right| \leqslant \mathrm{R}$ Se denomina residuo de f en $\mathrm{z}_{\mathrm{o}} y$ se indica $\mathrm{R}\left[\mathrm{f}, \mathrm{z}_{\mathrm{o}}\right]$ al coeficiente del término en $\left(\mathrm{z}-\mathrm{z}_{\mathrm{o}}\right)^{-1}$ del desarrollo en serie de Laurent de f en D ; es decir:
+Sea funa función holomorfa en un disco D reducido: $0<\left|z-z_{0}\right| \leqslant \mathrm{R}$ Se denomina residuo de f en $\mathrm{z}_0 y$ se indica $\mathrm{R}\left[\mathrm{f}, \mathrm{z}_0\right]$ al coeficiente del término en $\left(\mathrm{z}-\mathrm{z}_0\right)^{-1}$ del desarrollo en serie de Laurent de f en D ; es decir:
 
 
 \begin{equation*}
@@ -5162,11 +5162,11 @@ $$
 $$
 
 Definiremos ahora el concepto de continuidad.\\
-Sea $f$ una aplicación de un espacio métrico $X$ en otro espacio métrico $Y$. Entonces $f$ se dice continua en el punto $\mathrm{x}_{\mathrm{o}}$ si, $y$ sólo si, a todo $\varepsilon>0$ se le puede hacer corresponder un $\eta>0$ tal que
+Sea $f$ una aplicación de un espacio métrico $X$ en otro espacio métrico $Y$. Entonces $f$ se dice continua en el punto $\mathrm{x}_0$ si, $y$ sólo si, a todo $\varepsilon>0$ se le puede hacer corresponder un $\eta>0$ tal que
 
 
 \begin{equation*}
-d\left(x, x_{\mathrm{o}}\right)<\eta \Rightarrow d\left[f(x), f\left(x_{0}\right)\right]<\varepsilon . \tag{1-4}
+d\left(x, x_0\right)<\eta \Rightarrow d\left[f(x), f\left(x_{0}\right)\right]<\varepsilon . \tag{1-4}
 \end{equation*}
 
 
@@ -7136,7 +7136,7 @@ S_{m}(x)=\sum_{-m}^{m} c_{n} e^{i n x} \tag{5-14}
 la suma parcial de la serie exponencial de Fourier asociada a $f$.\\
 El problema queda entonces planteado en los siguientes términos:\\
 a) Determinar si existe el límite de $\mathrm{S}_{\mathrm{m}}(\mathrm{x})$ para $\mathrm{m} \rightarrow \infty$ para cada punto x . Es decir, reconocer si la serie de Fourier de f es puntualmente convergente.\\
-b) Supuesto que la serie sea convergente en el punto $\mathrm{x}=\mathrm{x}_{0}$ establecer si su suma es igual a $\mathrm{f}\left(\mathrm{x}_{\mathrm{o}}\right)$.
+b) Supuesto que la serie sea convergente en el punto $\mathrm{x}=\mathrm{x}_{0}$ establecer si su suma es igual a $\mathrm{f}\left(\mathrm{x}_0\right)$.
 
 Sin hipótesis suplementarias sobre el comportamiento de $f$ en el entorno del punto, en general la respuesta a la cuestión b) es negativa.
 
@@ -8124,13 +8124,13 @@ $$
 para cierta constante $\mathrm{K}>0 y$ para todos los pares de puntos $\left(\mathrm{x}_{1}, \mathrm{y}_{1}\right)$, $\left(x_{1}, y_{2}\right) \in \Omega$. Sea además $\left(x_{0}, y_{0}\right) \in \Omega$.
 
 \section*{MATEMATICA AVANLADA PARA LA FISICA.}
-Entonces existen un intervalo $[\mathrm{a}, \mathrm{b}]$ que contiene al punto $\mathrm{x}_{\mathrm{o}}, \mathrm{y}$ una función $\mathrm{y}(\mathrm{x})$ definida en él, $y$ cuyo gráfico está contenido en M , tales que $\mathrm{y}(\mathrm{x})$ es solución de la ecuación
+Entonces existen un intervalo $[\mathrm{a}, \mathrm{b}]$ que contiene al punto $\mathrm{x}_0, \mathrm{y}$ una función $\mathrm{y}(\mathrm{x})$ definida en él, $y$ cuyo gráfico está contenido en M , tales que $\mathrm{y}(\mathrm{x})$ es solución de la ecuación
 
 $$
 y^{\prime}=F(x, y)
 $$
 
-y cumple la condición inicial $\mathrm{y}\left(\mathrm{x}_{\mathrm{o}}\right)=\mathrm{y}_{\mathrm{o}}$. La solución $\mathrm{y}(\mathrm{x})$ es única; o, de otra manera, cualquier función que satisfaga esas condiciones debe coincidir con $\mathrm{y}(\mathrm{x})$ sobre $[a, b]$.
+y cumple la condición inicial $\mathrm{y}\left(\mathrm{x}_0\right)=\mathrm{y}_0$. La solución $\mathrm{y}(\mathrm{x})$ es única; o, de otra manera, cualquier función que satisfaga esas condiciones debe coincidir con $\mathrm{y}(\mathrm{x})$ sobre $[a, b]$.
 
 Omitiremos la demostración de este teorema.\\
 Mencionaremos a continuación el teorema de existencia y unicidad de la solución $y(x)$ de la ecuación diferencial de orden $n$.
@@ -9467,7 +9467,7 @@ donde $\alpha_{m}=y^{(m)}\left(x_{0}\right) \vee m=0,1, \ldots, n-1$. Es evident
 Entonces $\Phi$ es un isomorfismo entre los espacios $L^{-1}(0)$ y $C^{n}$ y por .lo tanto tenemos el
 
 \section*{TEOREMA 1}
-Sea $\mathrm{x}_{0}$ un punto del dominio $\Omega$ donde están definidos los coeficientes de la ccuación (6-1); sea D el disco de centro $\mathrm{x}_{0}$ y radio R igual a la distancia de $\mathrm{x}_{\mathrm{o}}$ al punto singular de los coeficientes que esté más próximo a èl. Entonces el conjunto de las soluciones de (6-1) holomorjas en D es un espacio vectorial de dimensión n .
+Sea $\mathrm{x}_{0}$ un punto del dominio $\Omega$ donde están definidos los coeficientes de la ccuación (6-1); sea D el disco de centro $\mathrm{x}_{0}$ y radio R igual a la distancia de $\mathrm{x}_0$ al punto singular de los coeficientes que esté más próximo a èl. Entonces el conjunto de las soluciones de (6-1) holomorjas en D es un espacio vectorial de dimensión n .
 
 La integral general de la ecuación dada, tiene por lo tanto la forma
 
@@ -9501,7 +9501,7 @@ $\left|\begin{array}{cccc}y_{1}\left(x_{0}\right) & y_{2}\left(x_{0}\right) & \c
 es distinto de cero, pero este determinante es $W\left(x_{0}\right)$, luego tenemos el
 
 \section*{Teorema 2}
-En las hipótesis del teorema $1, \mathrm{n}$ solucuones $\mathrm{y}_{1}, \mathrm{y}_{2}, \ldots, \mathrm{y}_{\mathrm{n}}$ de la ecuación diferencial son linealmente independientes en D si, $y$ sólo si, no se anula su wronskiano en $\mathrm{x}_{\mathrm{o}}$.
+En las hipótesis del teorema $1, \mathrm{n}$ solucuones $\mathrm{y}_{1}, \mathrm{y}_{2}, \ldots, \mathrm{y}_{\mathrm{n}}$ de la ecuación diferencial son linealmente independientes en D si, $y$ sólo si, no se anula su wronskiano en $\mathrm{x}_0$.
 
 Esta propiedad de carácter local se complementa con el siguiente
 
@@ -9816,7 +9816,7 @@ El siguiente teorema caracteriza a los puntos singulares regulares:
 \section*{Teorema de Fuchs}
 El punto $\mathrm{x}_{0}$ es un punto singular regular de la ecuación (7.2) si, y sólo si, verifica las condiciones:\\
 a) Por lo menos uno de los coeficientes $\mathrm{p}(\mathrm{x})$ ó $\mathrm{q}(\mathrm{x})$ tiene en $\mathrm{x}_{0}$. una singularidad.\\
-b) Las funciones $\left(\mathrm{x}-\mathrm{x}_{\mathrm{o}}\right) \cdot \mathrm{p}(\mathrm{x}) y\left(\mathrm{x}-\mathrm{x}_{\mathrm{o}}\right)^{2} \cdot \mathrm{q}(\mathrm{x})$ son holomorfas en $\mathrm{x}=\mathrm{x}_{\mathrm{o}}$. O equivalentemente: $\mathrm{x}_{\mathrm{o}}$ es a lo sumo, un polo de primer orden para $\mathrm{p}(\mathrm{x})$ y a lo sumo uno de segundo orden para $\mathrm{q}(\mathrm{x})$.
+b) Las funciones $\left(\mathrm{x}-\mathrm{x}_0\right) \cdot \mathrm{p}(\mathrm{x}) y\left(\mathrm{x}-\mathrm{x}_0\right)^{2} \cdot \mathrm{q}(\mathrm{x})$ son holomorfas en $\mathrm{x}=\mathrm{x}_0$. O equivalentemente: $\mathrm{x}_0$ es a lo sumo, un polo de primer orden para $\mathrm{p}(\mathrm{x})$ y a lo sumo uno de segundo orden para $\mathrm{q}(\mathrm{x})$.
 
 No daremos la demostración de este teorema; nos limitaremos a dar un contraejemplo; sea la ecuación
 
