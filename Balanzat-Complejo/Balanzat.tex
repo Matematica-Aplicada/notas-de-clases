@@ -9,13 +9,16 @@
 \usepackage[version=4]{mhchem}
 \usepackage{stmaryrd}
 \usepackage{caption}
-\usepackage{polyglossia} 
-\setmainlanguage{spanish}
+
 \usepackage{fontspec}
 \setmainfont{Latin Modern Roman}
 \usepackage{shorttoc}
 \usepackage{setspace}
 \usepackage{amsthm}
+
+% Personalización manual de etiquetas
+\renewcommand{\proofname}{Dem.}
+\renewcommand{\contentsname}{Índice}
 
 % Definición de entornos de teoremas
 \theoremstyle{plain}
@@ -51,9 +54,10 @@
 }
 \makeatother
 
+
 \title{Matemática Avanzada para la Física\vspace{1.5cm}}
 
-\author{Manuel Balanzat\vspace{1cm}}
+\author{Manuel Balanzat}
 \date{}
 
 
@@ -909,8 +913,8 @@ $$
 \section{Sucesiones y series numéricas en el campo complejo}
 Una sucesión $\left\{z_{n}\right\}$ de números complejos se define como una aplicación $n \rightarrow z_{n}$ del conjunto de los números naturales en el de los complejos.
 
-\section*{DEFINICION 1}
-Se dice que $\alpha \in \mathrm{C}$ es el límite de la sucesión $z_{n}$,
+\begin{definition}
+  Se dice que $\alpha \in \mathrm{C}$ es el límite de la sucesión $z_{n}$,
 
 $$
 \alpha=\lim _{n \rightarrow \infty} z_{n},
@@ -918,21 +922,24 @@ $$
 
 si para todo $\varepsilon>0$, existe $\mathrm{n}_{0}$ natural tal que
 
+\begin{equation*}
+  n \geqslant n_{0} \Rightarrow z_{n}-\alpha \mid \leqslant \varepsilon .  \tag{7-1}
+\end{equation*}
+\end{definition}
 
-\begin{gather*}
-n \geqslant n_{0} \Rightarrow z_{n}-\alpha \mid \leqslant \varepsilon .  \tag{7-1}\\
-\text { Pongamos } z_{n}=x_{n}+i y_{n}, \alpha=a+i b . \text { Se tiene } \\
-0 \leqslant \sup \left\{\left|x_{n}-a\right|, \mid y_{n}-b i\right\} \leqslant\left|z_{n}-\alpha\right| \leqslant\left|x_{n}-a\right|+\left|y_{n}-b\right|
-\end{gather*}
+Pongamos 
 
+$$ z_{n}=x_{n}+i y_{n}, \alpha=a+i b $$
+
+Se tiene
+
+$$ 0 \leqslant \sup \left\{\left|x_{n}-a\right|, \mid y_{n}-b i\right\} \leqslant\left|z_{n}-\alpha\right| \leqslant\left|x_{n}-a\right|+\left|y_{n}-b\right| $$
 
 y estas desigualdades implican, naturalmente,
-
 
 \begin{equation*}
 \lim _{n \rightarrow \infty} z_{n}=\alpha \Leftrightarrow \lim _{n \rightarrow \infty} x_{n}=a \quad \text { y } \quad \lim _{n \rightarrow \infty} y_{n}=b \tag{7-2}
 \end{equation*}
-
 
 es decir, la convergencia de la sucesión se reduce a la convergencia de las partes real e imaginaria.
 
@@ -956,16 +963,16 @@ De (7-2) y de las propiedades de los límites en el campo real se deduce que
 \end{gather*}
 
 
-\section*{DEFINICION 2}
+\begin{definition}
 Sea $u_{\mathrm{n}}$ una sucesión de números complejos. Diremos que la serie de término general $\mathrm{u}_{\mathrm{n}}$ converge hacia $\mathrm{S}, o$ tiene como suma S , si se cumple
-
 
 \begin{equation*}
 \lim _{m \rightarrow \infty} \sum_{1}^{\mathrm{m}} u_{n}=S=\sum_{1}^{\infty} u_{n} \tag{7-7}
 \end{equation*}
 
-
 Toda serie para la que exista este límite se dirá convergente; si el límite no existe se dice que la serie es divergente.
+\end{definition}
+
 
 De acuerdo con lo que acabamos de decir se deduce que la serie de término general $z_{n}=\alpha_{n}+i \beta_{n}$ es convergente si, y sólo si, cada una de las series de término general $\alpha_{n}$ y $\beta_{n}$ es convergente. Si una serie de término general $u_{n}$ converge, entonces se tiene, como en el caso real, $\lim u_{n}=0$.
 
@@ -1081,17 +1088,20 @@ $$
 es decir, $\left|u_{n}\right|>1$, luego la serie diverge.\\
 Para terminar enunciaremos los dos teoremas siguientes:
 
-\section*{Teorlema 1 :}
+\begin{theorem}
 Si las series de término general $\mathrm{a}_{\mathrm{n}} y \mathrm{~b}_{\mathrm{n}}$ convergen absolutamente, la serie de término general $a_{n}+b_{n}$ converge absolutamente.
+\end{theorem}
 
-\section*{TEORI:MA 2:}
+\begin{theorem}
 Si las series de términos generales $\mathrm{a}_{\mathrm{n}} . v \mathrm{~b}_{\mathrm{n}}$ convergen absolutamente la serie
 
 $$
 a_{1} b_{1}+a_{1} b_{2}+a_{2} b_{1}+a_{3} b_{1}+a_{2} b_{2}+a_{1} b_{3}+\cdots
 $$
 
-convergé hacia el producto de la suma de las dos series dadas.\\
+converge hacia el producto de la suma de las dos series dadas.
+\end{theorem}
+
 El primer teorema es inmediato y el segundo se demuestra como en el caso real.
 
 \section{Series de funciones}
@@ -1109,7 +1119,7 @@ $$
 
 Cuando es posible encontrar un $n_{0}$ que dependa sólo de $\varepsilon$, la convergencia se dice que es uniforme. Es decir:
 
-\section*{DEFINICION 1}
+\begin{definition}
 Una sucesión de funciones $\hat{\mathrm{f}}_{\mathrm{n}}: \Omega \rightarrow \mathrm{C}$ se dice que converge uniformemente hacia la función $\mathrm{f}: \Omega \rightarrow \mathrm{C}$ si dado $\varepsilon>0$ existe no tal que
 
 $$
@@ -1121,10 +1131,11 @@ o lo que es lo mismo:
 $$
 \lim _{n \rightarrow \infty} \sup _{z \in \Omega}\left|f_{n}(z)-f(z)\right|=0
 $$
+\end{definition}
 
 Análogamente, se definen la convergencia y la convergencia uniforme de una serie de funciones.
 
-\section*{Ejemplo}
+\begin{example}
 La serie geométrica de razón $z$ es convergente para $|z|<1$ y su suma es $(1-z)^{-1}$ es decir:
 
 $$
@@ -1162,19 +1173,22 @@ $$
 \left|\frac{z^{n+1}}{z-1}\right| \leqslant \varepsilon
 $$
 
-lo que prueba la convergencia uniforme en ese dominio.\\
+lo que prueba la convergencia uniforme en ese dominio.
+\end{example}
+
+
 Esta conclusión se deduce del siguiente criterio de Weierstrass de la mayorante:
 
-Si para todo $n$, se tiene
-
+\begin{theorem}
+  Si para todo $n$, se tiene
 
 \begin{equation*}
 \left|\dot{u}_{n}(z)\right| \leqslant a_{n} \quad(\forall z \in \Omega) \tag{$\forall z\in\Omega$}
 \end{equation*}
 
-
 y si la serie de término general $a_{n}$ es convergente, entonces la serie de término general $u_{n}(z)$ converge absoluta y uniformemente en $\Omega$.
-
+\end{theorem}
+\begin{proof}
 En efecto: dados $\varepsilon>0$, existe un $n_{0}$ tal que para $m \geqslant n_{0}$ y para todo $p$ se tiene por la convergencia de la serie de término general $a_{\mathrm{n}}$ :
 
 $$
@@ -1197,6 +1211,8 @@ z \in \Omega, m \geqslant n_{0} \Rightarrow\left|S(z)-\sum_{1}^{m} u_{n}(z)\righ
 $$
 
 lo que prueba que la convergencia es uniforme.
+\end{proof}
+
 
 Otro resultado de interés es el siguiente:
 
@@ -1562,63 +1578,72 @@ a_{n}=\frac{1}{2 \pi i} \int_{C^{+}} \frac{f(u) d u}{\left(u-z_{0}\right)^{n+1}}
 
 de modo que los coeficientes $a_{n}$ son independientes de $z$. Así, puede enunciarse el
 
-\section*{I'EOREMA 1}
+\begin{theorem}
 Sean f una función holomorfa en un abierto $\Omega$ y $\mathrm{z}_{0} \in \Omega$. Entonces f es desarrollable en serie de potencias de ( $\mathrm{z}-\mathrm{z}_{0}$ ) en cualquier disco de centro $\mathrm{z}_{0}$ contenido en $\Omega$.
+\end{theorem}
 
-\section*{OBSERVACIONES}
-$1^{\circ}$ ) El teorema anterior pone de manifiesto una importante distinción entre el dominio real y el complejo.
+\begin{remark}
+El teorema anterior pone de manifiesto una importante distinción entre el dominio real y el complejo.
 
-En primer lugar la mera existencia de la derivada primera implica la posibilidad de desarrollar la función en serie de potencias y por lo tanto la existencia de derivadas de todos los órdenes.\\
-$2^{0}$ ) El desarrollo en serie es válido en un disco cuyo radio es la distancia al punto más próximo en el que la función deja de ser holomorfa o de estar definida. Nada de esto es válido en el campo real. Por ejemplo, se tiene que el desarrollo
+En primer lugar la mera existencia de la derivada primera implica la posibilidad de desarrollar la función en serie de potencias y por lo tanto la existencia de derivadas de todos lun caso particular el teorema de Picardos órdenes.
+\end{remark}
 
-$$
-\frac{1}{1+x^{2}}=1-x^{2}+x^{4}-x^{6}+\cdots
-$$
+\begin{remark}
+El desarrollo en serie es válido en un disco cuyo radio es la distancia al punto más próximo en el que la función deja de ser holomorfa o de estar definida. Nada de esto es válido en el campo real. Por ejemplo, se tiene que el desarrollo
 
-es válido para $|x|<1$, mientras que la función es indefinidamente derivable en todo $R$.
+  $$
+  \frac{1}{1+x^{2}}=1-x^{2}+x^{4}-x^{6}+\cdots
+  $$
 
-La razón de esta aparente anomalía aparece al prolongar la función para los valores complejos de $x$, ya que
+  es válido para $|x|<1$, mientras que la función es indefinidamente derivable en todo $R$.
 
-$$
-\frac{1}{1+x^{2}}
-$$
+  La razón de esta aparente anomalía aparece al prolongar la función para los valores complejos de $x$, ya que
 
-se hace infinita en $x= \pm i$; luego el radio de convergencia tiene que ser 1 .\\
-También en el campo real, la función
+  $$
+  \frac{1}{1+x^{2}}
+  $$
 
-$$
-f(x)= \begin{cases}e^{-\frac{1}{x^{2}}} & \text { si } x \neq 0 \\ 0 & \text { si } x=0\end{cases}
-$$
+  se hace infinita en $x= \pm i$; luego el radio de convergencia tiene que ser 1 .\\
+  También en el campo real, la función
 
-es indefinidamente derivable, pero no desarrollable en serie. En cambio si tomamos $x$ complejo, $f$ resulta discontinua, pues por ejemplo:
+  $$
+  f(x)= \begin{cases}e^{-\frac{1}{x^{2}}} & \text { si } x \neq 0 \\ 0 & \text { si } x=0\end{cases}
+  $$
 
-$$
-\lim _{y \rightarrow 0} e^{-\frac{1}{(i y)^{2}}}=\lim _{y \rightarrow 0} e^{\frac{1}{y^{2}}}=\infty .
-$$
+  es indefinidamente derivable, pero no desarrollable en serie. En cambio si tomamos $x$ complejo, $f$ resulta discontinua, pues por ejemplo:
 
-$3^{0}$ ) De (11-1) y de la fórmula
-
-$$
-a_{n}=\frac{f^{(n)}\left(z_{0}\right)}{n!}
-$$
-
-se deduce la fórmula generalizada de Cauchy; si $f$ es holomorfa en $\Omega$, $z_{0} \in \Omega$ y $C$ es una circunferencia de radio $r$ que está contenida en $\Omega$ se tiene
+  $$
+  \lim _{y \rightarrow 0} e^{-\frac{1}{(i y)^{2}}}=\lim _{y \rightarrow 0} e^{\frac{1}{y^{2}}}=\infty .
+  $$
+\end{remark}
 
 
-\begin{equation*}
-f(n)\left(z_{0}\right)=\frac{n!}{2 \pi i} \int_{C^{+}} \frac{f(u) d u}{\left(n-z_{0}\right)^{n+1}} . \tag{11-2}
-\end{equation*}
+\begin{remark}
+De (11-1) y de la fórmula
+
+  $$
+  a_{n}=\frac{f^{(n)}\left(z_{0}\right)}{n!}
+  $$
+
+  se deduce la fórmula generalizada de Cauchy; si $f$ es holomorfa en $\Omega$, $z_{0} \in \Omega$ y $C$ es una circunferencia de radio $r$ que está contenida en $\Omega$ se tiene
 
 
-Acotandò ia integral que aparece en (11-1) se llega a la desigualdad de Cauchy:
+  \begin{equation*}
+  f(n)\left(z_{0}\right)=\frac{n!}{2 \pi i} \int_{C^{+}} \frac{f(u) d u}{\left(n-z_{0}\right)^{n+1}} . \tag{11-2}
+  \end{equation*}
 
 
-\begin{equation*}
-\left|a_{n}\right| \leqslant \frac{M(r)}{r^{n}} \quad \text { con } \quad M(r)=\sup _{\left|z-z_{0}\right|=r}|f(z)| \tag{11-3}
-\end{equation*}
+  Acotandò ia integral que aparece en (11-1) se llega a la desigualdad de Cauchy:
 
 
-Esto comprueba que el radio de convergencia de la serie es $\geqslant r$, por la aplicación del criterio de Cauchy.
+  \begin{equation*}
+  \left|a_{n}\right| \leqslant \frac{M(r)}{r^{n}} \quad \text { con } \quad M(r)=\sup _{\left|z-z_{0}\right|=r}|f(z)| \tag{11-3}
+  \end{equation*}
+
+
+  Esto comprueba que el radio de convergencia de la serie es $\geqslant r$, por la aplicación del criterio de Cauchy.
+\end{remark}
+
 
 Demostraremos ahora otra propiedad esencial: el principio de identidad de las funciones holomorfas.
 
@@ -1650,8 +1675,10 @@ Como $\Omega_{1}$ es abierto y $\alpha \in \Omega_{1}$, hay un segmento $[\alpha
 En $\beta$ las funciones $f$ y $g$ son desarrollables en series de potencias de $(z-\beta)$. Los puntos del intervalo abierto $]\alpha, \beta[$ de $P$ no están en $E$, luego, están en $\Omega_{1}$, por lo tanto $f$ y $g$ son iguales en un disco de centro $\beta$, que corta a la poligonal en un segmento de centro $\beta$, si $\gamma$ es el extremo derecho del segmento, se tiene que todo el segmento $[\alpha, \gamma]$ está en $\Omega_{1}$, luego el ínfimo en el orden de los puntos de $E$ no es $\beta$ en contradicción con la definición de $\beta$. Por lo tanto debe ser $\beta=z_{0}$. Pero de nuevo $f$ y $g$ son desarrollables en series de potencias de $(z-z_{0})$ y son iguales en $[\alpha, z_{0}[$, luego $z_{0} \in \Omega_{1}$, lo que contradice la hipótesis inicial y demuestra el teorema.
 \end{proof}
 
-\section*{OBSERVACIÓN}
+\begin{remark}
 La hipótesis del teorema anterior se cumple cuando $f$ y $g$ son iguales en un abierto o en una curva contenida en $\Omega$.
+\end{remark}
+
 
 Insistimos en la importancia de la condición $\alpha \in \Omega$.
 
@@ -1661,14 +1688,13 @@ Vamos a generalizar la función exponencial y las trigonométricas e hiperbólic
 Todas ellas entran dentro de la clase de funciones denominadas enteras, es decir las que se expresan mediante un desarrollo en serie de\\
 potencias de radio infinito. Partiremos de los desarrollos y emplearemos el principio de identidad como herramienta esencial:
 
-\section*{DEFINICION 1}
-La función exponencial $\mathrm{e}^{\mathrm{z}}$ se define mediante la serie entera:
+\begin{definition}
+  La función exponencial $\mathrm{e}^{\mathrm{z}}$ se define mediante la serie entera:
 
-
-\begin{equation*}
-e^{z}=\sum_{0}^{\infty} \frac{z^{n}}{n!} . \tag{12-1}
-\end{equation*}
-
+  \begin{equation*}
+  e^{z}=\sum_{0}^{\infty} \frac{z^{n}}{n!} . \tag{12-1}
+  \end{equation*}
+\end{definition}
 
 Como la serie es de radio infinito, determina una función entera que coincide con la exponencial conocida para $z$ real.
 
@@ -1797,15 +1823,15 @@ De ellas resulta que $\cos z$ y sen $z$ tienen período $2 \pi$. De (12-11) se d
 
 lo que prueba que la tangente compleja tiene período $\pi$.
 
-\section*{DEFINICION 3}
-Las funciones hiperbólicas se definen por las fórmulas siguientes:
+\begin{definition}
+  Las funciones hiperbólicas se definen por las fórmulas siguientes:
 
-$$
-\operatorname{sh} z=\sum_{0}^{\infty} \frac{z^{2 n+1}}{(2 n+1)!} \quad ; \quad \operatorname{ch} z=\sum_{0}^{\infty} \frac{z^{2 n}}{(2 n)!} \quad ; \quad \text { th } z=\frac{\operatorname{sh} z}{\operatorname{ch} z} \cdot(12-13)
-$$
+  $$
+  \operatorname{sh} z=\sum_{0}^{\infty} \frac{z^{2 n+1}}{(2 n+1)!} \quad ; \quad \operatorname{ch} z=\sum_{0}^{\infty} \frac{z^{2 n}}{(2 n)!} \quad ; \quad \text { th } z=\frac{\operatorname{sh} z}{\operatorname{ch} z} \cdot(12-13)
+  $$
+\end{definition}
 
-$Y$ al igual que en el caso de las funciones trigonométricás se pueden demostrar las fórmulas
-
+Al igual que en el caso de las funciones trigonométricás se pueden demostrar las fórmulas
 
 \[
 \left.\begin{array}{lll}
@@ -1815,15 +1841,14 @@ $Y$ al igual que en el caso de las funciones trigonométricás se pueden demostr
 \end{array}\right\}
 \]
 
-así como las relaciones de adición.\\
-También se establecen las fórmulas que conectan las funciones hiperbólicas con la exponencial
+así como las relaciones de adición.
 
+También se establecen las fórmulas que conectan las funciones hiperbólicas con la exponencial
 
 \begin{gather*}
 e^{z}=\operatorname{ch} z+\operatorname{sh} z  \tag{12-15}\\
 \operatorname{ch} z=\frac{e^{z}+e^{-z}}{2} \quad ; \operatorname{sh} z=\frac{e^{z}-e^{-z}}{2} \quad ; \text { th } z=\frac{e^{2 z}-1}{e^{2 z}+1} \tag{12-16}
 \end{gather*}
-
 
 de donde vemos que $c h$ y $s h$ tienen período $2 \pi i$ y la tangente hiperbólica período $\pi i$.
 
@@ -2102,8 +2127,10 @@ $$
 uniformemente sobre $\Gamma$. De aquí se demuestra por inducción (14-2) para cualquier valor de $p$.
 \end{proof}
 
-\section*{OBSERVACIÓN}
+\begin{remark}
 Si $\Omega$ es no conexo la función $f$ puede quedar definida de distintas maneras, según la componente conexa de $\Omega$ que se considere. Así si $\varphi$ es una función entera y $\Omega$ es el complementario de $|z|=1$, para $|z|<1$ es $f(z)=\varphi(z)$, y para $|z|>1$ es $f(z)=0$.
+\end{remark}
+
 
 Pasemos ahora al teorema sobre la derivación de sucesiones (que naturalmente puede usarse también para series).
 
@@ -2493,8 +2520,9 @@ a_{n}=\frac{1}{2 \pi i} \int_{\gamma^{+}} \frac{f(z) d z}{\left(z-z_{0}\right)^{
 y $\gamma$ es cualquier circunferencia de centro $z_{0}$ y radio $r$ tal que $0<r \leqslant R$.\\
 El estudio de las funciones por sus desarrollos de Laurent alrededor de un punto singular es básico en la teoría de las funciones de variable compleja. Un primer paso es la clasificación de los puntos singulares aislados de acuerdo a la siguiente definición:
 
-\section*{DEFINICION 1:}
-Sea $\mathrm{z}_{0}$ un punto singular aislado de f. Si su desarrollo en serie de Laurent no contiene ningún término con potencias negativas, se dice que $z_{0}$ es una singularidad evitable. Si el desarrollo en serie de Laurent tiene un número finito no nulo de esos términos se dice que $z_{0}$ es un polo. Si se tiene una infinidad de términos de potencias negativas se dice que es una singularidad esencial.
+\begin{definition}
+Sea $\mathrm{z}_{0}$ un punto singular aislado de f. Si su desarrollo en serie de Laurent no contiene ningún término con potencias negativas, se dice que $z_{0}$ es una singularidad evitable. Si el desarrollo en serie de Laurent tiene un número finito no nulo de esos términos se dice que $z_{0}$ es un polo. Si se tiene una infinidad de términos de potencias negativas se dice que es una singularidad esencial.  
+\end{definition}
 
 Vamos a estudiar primero el caso más simple: el de los singulares evitables. El desarrollo en serie de Laurent es entonces un desarrollo en serie de Taylor y representa una función holomorfa que vale $a_{0}$ en $z=z_{0}$ y coincide con $f(z)$ en los demás puntos del disco. Basta, pues, dar a $f$ el valor $a_{0}$ en $z=z_{0}$ para obtener una función holomorfa en $z_{0}$; de aquí el nombre de la singularidad.
 
@@ -2615,20 +2643,23 @@ $$
 
 entonces para $z$ real, $f(z)$ tiende a cero para $z \rightarrow 0$ y para $z$ imaginario puro $f(z)$ tiende hacia infinito, en módulo. Luego $z_{0}=0$ es un punto singular esencial.
 
-\section*{OBSI:RVACION}
+\begin{remark}
 El teorema 5 puede deducirse igualmente si se reemplaza el teorema de Picard por el de Cassurati-Weierstrass, más débil.
+\end{remark}
 
-\section*{TEOREMA 6:}
+\begin{theorem}
 Sea $z_{0}$ un punto singular esencial de $f$; sea $\alpha$ un complejo cualquiern 1. $\varepsilon, r_{0} r_{0}$ dos mimeros reales estrictamente positivos. Entonces existe $u n$ complejo $x_{1}$ tal que:
 
 $$
 \left|z_{1}-z_{0}\right| \leqslant r_{0} \quad y \quad\left|f\left(z_{1}\right)-\alpha\right| \leqslant \varepsilon .
 $$
+\end{theorem}
 
 Este teorema nos dice que en el entorno de un punto singular esencial la función se aproxima tanto como se quiera a cualquier valor complejo, mientras que el de Picard afirma que los toma todos salvo eventualmente un valor excepcional.
 
 Demostraremos este teorema, con lo que habremos también demostrado el 5.
 
+\begin{proof}
 Si en $\left|z-z_{0}\right| \leqslant r_{(1}$, la función toma el valor $\alpha$, el teorema es tá demostrado.
 
 Si no lo toma cualquiera que sea $r_{0}$, la función
@@ -2684,6 +2715,7 @@ $$
 $$
 
 O sea, tal que $\left|f\left(z_{1}\right)-\alpha\right| \leqslant \varepsilon$, lo que prueba el teorema.
+\end{proof}
 
 Para terminar, comprobaremos en un caso particular el teorema de Picard. El punto $z=0$ es un punto singular esencial de $e^{l / z}$; la función exponencial no toma valor cero, el que por lo tanto será el valor excep. cional del enunciado.
 
@@ -2750,16 +2782,17 @@ $$
 o sea, el límite de $f(z)$ para $z \rightarrow \infty$ coincide con el de $\varphi(w)$ para $w \rightarrow 0$.\\
 Aun cuando el plano compactificado no conserva la estructura de espacio vectorial, pues no es posible definir en $S$ las operaciones vectoriales, puede sin embargo darse un sentido al concepto de función holomorfa en el $\infty$, por generalización del resultado anterior, de la manera siguiente:
 
-\section*{DEFINICION 1}
+\begin{definition}
 Una función f se dice holomorfa en el infinito si la función $\varphi$ definida como
 
 $$
 \varphi(w)=f\left(\frac{1}{w}\right)
 $$
 
-es holomorja en el origen.
+es holomorja en el origen.  
+\end{definition}
 
-\section*{Ejemplo}
+\begin{example}
 Las funciones
 
 $$
@@ -2772,8 +2805,11 @@ $$
 \varphi_{1}(w)=\frac{1}{1+\frac{1}{w}}=\frac{w}{w+1} \quad, \quad \varphi_{2}(w)=e^{w}
 $$
 
-son holomorfas en el origen.\\
-Sea ahora una función $f$ holomorfa en $|z|>R$. Por lo tanto la fun ción
+son holomorfas en el origen.  
+\end{example}
+
+
+Sea ahora una función $f$ holomorfa en $|z|>R$. Por lo tanto la función
 
 $$
 \varphi(w)=f\left(\frac{1}{w}\right) \quad \text { es holomorfa en } 0<|w|<R^{-1},
@@ -2781,26 +2817,32 @@ $$
 
 es decir, $w=0$ es un punto singular aislado de $\varphi$. Se adopta entonces la siguiente
 
-\section*{DIFINICION 2:}
-Si f es holomorfa en el exterior de un disco se dice que el punto del infinito es un punto singular aislado de f. Será una singularidad evitable, un polo o una singularidad esencial, por definición, según que el punto $\mathrm{w}=0$ sea una singularidad evitable, un polo o una singularidad esencial, respectivamente, para la función $f\left(\frac{1}{\mathrm{~W}}\right)$.
+\begin{definition}
+Si f es holomorfa en el exterior de un disco se dice que el punto del infinito es un punto singular aislado de f. Será una singularidad evitable, un polo o una singularidad esencial, por definición, según que el punto $\mathrm{w}=0$ sea una singularidad evitable, un polo o una singularidad esencial, respectivamente, para la función $f\left(\frac{1}{\mathrm{w}}\right)$.  
+\end{definition}
 
-\subsection*{Ejemplos}
-$1^{0}$ ) Un polinomio de grado $m$ tiene en el infinito un polo de orden $m$ puesto que
+
+\begin{example}
+Un polinomio de grado $m$ tiene en el infinito un polo de orden $m$ puesto que
 
 $$
 P\left(\frac{1}{w}\right)=\frac{a_{m}}{w^{m}}+\cdots+\frac{a_{1}}{w}+a_{0},
 $$
 
-en $w=0$ tiene un polo de orden $m$.\\
-2) L.a función $e^{2}$ tiene una singularidad esencial en el $\infty$ porque
+en $w=0$ tiene un polo de orden $m$.  
+\end{example}
+
+\begin{example}
+  La función $e^{2}$ tiene una singularidad esencial en el $\infty$ porque
 
 $$
 f\left(\frac{1}{w}\right)=e^{1 / w}=1+\frac{1}{w}+\frac{1}{2!}+\frac{1}{w^{2}}+\cdots+\frac{1}{n!} \frac{1}{w^{n}}+\cdots
 $$
 
 es un desarrollo de Laurent con infinitos términos de potencias negativas, válido en un entorno reducido de $w=0$.
+\end{example}
 
-Sea aliora $f$ una función holomorfa en $|z|>R_{0}$. Por lo tanto $f$ admite un desarrollo en serie de Laurent en ese dominio. Es decir, se tiene en $|z|>R_{0}$.
+Sea ahora $f$ una función holomorfa en $|z|>R_{0}$. Por lo tanto $f$ admite un desarrollo en serie de Laurent en ese dominio. Es decir, se tiene en $|z|>R_{0}$.
 
 $$
 f(z)=\sum_{-\infty}^{\infty} a_{n} z^{n} \quad \text { con } \quad a_{n}=\frac{1}{2 \pi i} \int_{1^{+}} \frac{f(z)}{z^{n+1}} d z
@@ -2824,11 +2866,11 @@ $$
 
 Luego la función $f^{\prime}(z)$ cuyo desarrollo de Laurent en el exterior de un disco $|z|>R_{0}$ está dado por (18-1), tiene al punto del infinito como singularidad esencial si dicho desarrollo presenta un número infinito de potencias de exponente positivo. Es un polo si el desarrollo tiene un número finito de potencias de exponente mayor que cero, y es una singularidad evitable si no hay ninguna potencia de exponente mayor o igual que uno.
 
-Como a un entorno del infinito le corresponde (mediante ol cambio de variable $w=1 / z$ ) un contorno de cero, se puede caracterizar al punto singular por el comportamiento de $f$ en algún entorno $|z|>K$.\\
-Ejemplos
+Como a un entorno del infinito le corresponde (mediante ol cambio de variable $w=1 / z$ ) un contorno de cero, se puede caracterizar al punto singular por el comportamiento de $f$ en algún entorno $|z|>K$.
 
+\begin{example}
 $$
-1^{0} \text { ) Sea } f(z)=\frac{a_{11} z^{m}+\cdots+a_{1} z+a_{0}}{b_{11} z^{n}+\cdots+b_{1} z+b_{0}} \text {. }
+\text { ) Sea } f(z)=\frac{a_{11} z^{m}+\cdots+a_{1} z+a_{0}}{b_{11} z^{n}+\cdots+b_{1} z+b_{0}} \text {. }
 $$
 
 Para $z \neq \infty, f$ es una función holomorfa en el complemento de las raíces del denominador. Sean $z_{i}$ estas raíces; para
@@ -2862,21 +2904,30 @@ $$
 \lim _{z \rightarrow \infty}|f(z)|=\infty
 $$
 
-y la singularidad es un polo, de orden $m-n$.\\
-$2^{0}$ ) $f(z)=e^{z}$, admite un desarrollo en serie con infinitas potencias positivas en todo el plano complejo finito. Luego tiene una singularidad esencial en el infinito.\\
-$\left.3^{0}\right) f(z)=\operatorname{sen} \frac{1}{z}$ tiene un desarrollo en serie de Laurent de la forma
+y la singularidad es un polo, de orden $m-n$.
+\end{example}
+
+
+\begin{example}
+$f(z)=e^{z}$, admite un desarrollo en serie con infinitas potencias positivas en todo el plano complejo finito. Luego tiene una singularidad esencial en el infinito.
+\end{example}
+
+\begin{example}
+$f(z)=\operatorname{sen} \frac{1}{z}$ tiene un desarrollo en serie de Laurent de la forma
 
 $$
 \operatorname{sen} \frac{1}{z}=\frac{1}{z}-\frac{1}{3!} \frac{1}{z^{3}}+\cdots+\frac{(-1)^{n}}{(2 n+1)!} \frac{1}{z^{2 n+1}}+\cdots,
 $$
 
 válido en $|z|>0 \sin$ potencias de exponente positivo. La singularidad es evitable.
+\end{example}
 
+\begin{example}
+$f(z)=\operatorname{ctg} z$ tiene polos en $z=n \pi$, luego el infinito no es und singularidad aislada.
+\end{example}
 
-$\left.4^{0}\right) f(z)=\operatorname{ctg} z$ tiene polos en $z=n \pi$, luego el infinito no es und singularidad aislada.
-
-\section*{OBSERVACION:}
-Geométricamente, el plano complejo con el punto del infinito es equivalente a una superficie esférica. En efecto, se puede establecer entre ambos una aplicación biyectiva que conserve los entornos. Por esta razón el plano complejo compactificado se llama también esféra de Riemann. Sea $S$ una superficie esférica y $P$ un plano tangente a $S$ en el punto 0 .
+\subsection*{La esfera de Riemann}
+Geométricamente, el plano complejo con el punto del infinito es equivalente a una superficie esférica. En efecto, se puede establecer entre ambos una aplicación biyectiva que conserve los entornos. Por esta razón el plano complejo compactificado se llama también esfera de Riemann. Sea $S$ una superficie esférica y $P$ un plano tangente a $S$ en el punto 0 .
 
 \begin{figure}[h]
 \begin{center}
@@ -2893,16 +2944,23 @@ Una recta que pase por $l^{\prime}$ y no sea paralela a $P$ corta a $S$ en un pu
 A un entorno reducido de $l^{\prime}$ en $S$ (es decir, un casquete de centrol' del cual extraemos a $F$ ) esta aplicación hace corresponder el exterior de ull disco de centro () . Luego, si la extendemos haciendo corresponder a l'el punto del infinito, tendremos entre toda la superficie $S$ y el plano complejo más el punto del infinito una aplicación biyectiva que conserva los entornos.
 
 \section{Funciones meromorfas}
-\section*{DIAINICION 1:}
-Sca $\Omega$ un abierro concero. Lina finncient i: $\Omega \rightarrow$ ( se dice meromert)\\
-en $\Omega$ si $\mathrm{z}_{0} \in \Omega$ implica que f es holomorfa en $\mathrm{z}_{0}$ o bien que tiene un polo en $\mathrm{z}_{0}$.
 
-En otros términos $f$ es holomorfa en $\Omega$ salvo en un subconjunto $\Delta \subset \Omega$ en cada punto del cual $f$ tiene un polo. Si $\Delta=\emptyset, f$ es holomorfa en $\Omega$.
+\begin{definition}
+Sea $\Omega$ un abierto conexo. La función $f: \Omega \rightarrow \Omega$ se dice meromorfa en $\Omega$ si $\mathrm{z}_{0} \in \Omega$ implica que f es holomorfa en $\mathrm{z}_{0}$ o bien que tiene un polo en $\mathrm{z}_{0}$.
 
-\subsection*{Ejemplos}
-$1^{0}$ ) De acuerdo con lo dicho en el parágrafo anterior, toda función racional es meromorfa en el plano complejo compactificado.\\
-$2^{0}$ ) La función ctg $z$ es meromorfa en el plano complejo (sin el punto del $\infty$, que no es una singularidad aislada) pues es holomorfa en todo punto salvo para $z=n \pi$ en donde tiene polos de primer orden.\\
-$3^{0}$ ) La función
+En otros términos $f$ es holomorfa en $\Omega$ salvo en un subconjunto $\Delta \subset \Omega$ en cada punto del cual $f$ tiene un polo. Si $\Delta=\emptyset, f$ es holomorfa en $\Omega$.  
+\end{definition}
+
+\begin{example}
+De acuerdo con lo dicho en el parágrafo anterior, toda función racional es meromorfa en el plano complejo compactificado  
+\end{example}
+
+\begin{example}
+La función ctg $z$ es meromorfa en el plano complejo (sin el punto del $\infty$, que no es una singularidad aislada) pues es holomorfa en todo punto salvo para $z=n \pi$ en donde tiene polos de primer orden.
+\end{example}
+
+\begin{example}
+La función
 
 $$
 f(z)=\frac{1}{\operatorname{sen} \frac{1}{z}}
@@ -2914,13 +2972,17 @@ $$
 \Omega=\{x+i y \in C: 0<x<1,-1<y<1\}
 $$
 
-ya que las únicas singularidades de $f$ son los polos en los puntos $\frac{1}{17 \pi}$.\\
+ya que las únicas singularidades de $f$ son los polos en los puntos $\frac{1}{17 \pi}$.
+\end{example}
+
 Como vemos en estos ejemplos, una función meromorfa en $\Omega$ puede tener infinitos polos en el dominio, pero esos polos no pueden acumularse en un punto de $\Omega$, ya que en un punto de acumulación de polos no es ni polo ni punto de holomorfismo. Por lo tanto:
 
-\section*{Teoremal}
-Si f es meromorja en $\Omega$. $v$ si K es un conjunto cerrado .. acotado contenido en $\Omega$ ea K sölo hay un mimero fiiito de polos.
-
-En efecto, si hubiera una infinidad de ellos, por el teorema de Bolzano-Weierstrass, tendrían un punto de acumulación en $K$ y por lo tanto en $\Omega$. Esto contradice el hecho de que $f$ es meromorfa.
+\begin{theorem}
+Si $f$ es meromorfa en $\Omega$, y si $K$ es un conjunto cerrado y acotado contenido en $\Omega$, entonces en $K$ sólo hay un número finito de polos.
+\end{theorem}
+\begin{proof}
+En efecto, si hubiera una infinidad de ellos, por el teorema de Bolzano-Weierstrass, tendrían un punto de acumulación en $K$ y por lo tanto en $\Omega$. Esto contradice el hecho de que $f$ es meromorfa.  
+\end{proof}
 
 Vamos ahora a caracterizar las funciones meromorjas en el plan() complejo compactificado $v$ veremos que éstas coinciden c'on las funciones racionales.
 
