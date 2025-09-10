@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[10pt]{book}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -24,54 +24,11 @@
 \captionsetup{singlelinecheck=false}
 Ricardo G. Durán, Silvia B. Lassalle y Julio D. Rossi
 
-\section*{Índice general}
-Capítulo 1. Punto flotante y redondeo ..... 1
+\tableofcontents
+\cleardoublepage
 
-\begin{enumerate}
-  \item Punto flotante ..... 1
-  \item Redondeo ..... 3
-  \item Ejercicios ..... 11\\
-Capítulo 2. Normas y condicionamiento de una matriz ..... 15
-  \item Ejercicios ..... 29\\
-Capítulo 3. Resolución de sistemas lineales ..... 35
-  \item Métodos directos ..... 35
-  \item Métodos iterativos ..... 40
-  \item Ejercicios ..... 60\\
-Capítulo 4. Resolución de ecuaciones no lineales ..... 65
-  \item Método de bisección ..... 65
-  \item Método regula falsi ..... 68
-  \item Método de Newton-Raphson ..... 69
-  \item Método de punto fijo ..... 76
-  \item Método de la secante ..... 79
-  \item Ejercicios ..... 84\\
-Capítulo 5. Interpolación ..... 89
-  \item Interpolación de Lagrange ..... 89
-  \item Error de interpolación ..... 92
-  \item Forma de Newton ..... 94
-  \item Polinomios de Tchebychev - Minimización del Error ..... 97
-  \item Interpolación de Hermite ..... 104
-  \item Interpolación por polinomios a trozos ..... 106
-  \item Ejercicios ..... 109\\
-Capítulo 6. Polinomios ortogonales y aproximación por cuadrados mínimos ..... 113
-  \item Preliminares ..... 114
-  \item Solución de los Problemas de Aproximación ..... 120
-  \item Ejercicios ..... 129\\
-Capítulo 7. Integración numérica ..... 133
-  \item Fórmulas de Newton-Côtes ..... 134
-  \item Estimación del error ..... 141
-  \item Fórmulas de cuadratura compuestas ..... 147
-  \item Cuadratura Gaussiana ..... 152
-  \item Convergencia de los métodos de cuadratura ..... 160
-  \item Ejercicios ..... 163\\
-Capítulo 8. Resolución de ecuaciones diferenciales ordinarias ..... 167
-  \item Métodos de un paso ..... 169
-  \item Análisis del error y convergencia ..... 177
-  \item Métodos multipaso lineales ..... 185
-  \item Ejercicios ..... 194
-\end{enumerate}
 
-\section*{Capítulo 1}
-\section*{Punto flotante y redondeo}
+\chapter{Punto flotante y redondeo}
 El objeto de este capítulo es analizar la representación de los números en una computadora y la propagación de los errores de redondeo al realizar cálculos.
 
 Como la cantidad de información que puede guardarse en una computadora es finita, la máquina trabajará sólo con un conjunto finito de números. A estos los llamaremos números de máquina. En consecuencia, toda vez que de nuestros datos o cálculos surja un número que no pertenece a este conjunto finito, éste deberá ser reemplazado por una aproximación (el número de máquina más cercano). Este reemplazo da lugar a lo que llamamos errores de redondeo.
@@ -82,7 +39,7 @@ En las aplicaciones del cálculo numérico es prácticamente imposible determina
 
 Por otra parte, es fundamental distinguir cuando la propagación excesiva de errores se debe a que el algoritmo utilizado es "malo" o inestable o a que el problema en sí mismo está "mal condicionado". En el primer caso se puede (se debe!) tratar de mejorar el método de resolución mientras que en el segundo caso el problema es más esencial. Los ejemplos que presentaremos ilustrarán estos dos casos.
 
-\section*{1. Punto flotante}
+\section{Punto flotante}
 En lo que sigue supondremos que los números de máquina son los que aparecen en la pantalla. Esto no es exacto pues en realidad la computadora opera internamente con los números desarrollados en base 2 y no en base 10. Este abuso de lenguaje es sólo para mayor claridad (el lector podrá observar que todo nuestro análisis puede repetirse trabajando en base 2).
 
 Observemos primero que un número real cualquiera, $x \in \mathbb{R}, x>0$, puede escribirse como
@@ -133,7 +90,7 @@ $$
 x^{\prime \prime}=0, a_{1} a_{2} \ldots\left(a_{m}+1\right) 10^{l}
 $$
 
-\section*{2. Redondeo}
+\section{Redondeo}
 Hay dos formas de aproximar a $x$. Una es por truncamiento: se elige siempre $x^{\prime}$ es decir el mayor de los números de máquina que son menores que $x$. La otra forma es tomar el más próximo a $x$ entre $x^{\prime}$ y $x^{\prime \prime}$. A esta forma de aproximar se la conoce por redondeo y es la que usan habitualmente las computadoras.
 
 Veamos que error cometemos al aproximar un número por redondeo. Usaremos la notación
@@ -561,7 +518,7 @@ podemos empezar de $E_{20} \sim 0$ e ir hacia atrás usando $E_{n-1}=\frac{1-E_{
 
 Como conclusión, los ejemplos analizados en esta sección muestran la diferencia entre el caso en el cual la amplificación de los errores de redondeo se debe a que el problema está "mal condicionado" o "mal planteado" y el caso en el que dicha amplificación se debe al uso de un "algoritmo inestable". Es fundamental distinguir entre ambos casos y, por otra parte, encontrar las causas de la propagación indebida de errores con el objeto de mejorar los algoritmos.
 
-\section*{3. Ejercicios}
+\section{Ejercicios}
 \begin{enumerate}
   \item Utilizando el método de redondeo:\\
 a) Hallar el número de máquina más próximo a $125,6 \mathrm{y} \mathrm{a}=126$ si trabaja con
@@ -681,8 +638,7 @@ $$
 \pi=3,14159265358979323846264338327950288
 $$
 
-\section*{Capítulo 2}
-\section*{Normas y condicionamiento de una matriz}
+\chapter{Normas y condicionamiento de una matriz}
 Consideramos el sistema de $n$ ecuaciones con $n$ incógnitas
 
 $$
@@ -1461,7 +1417,7 @@ $$
 
 lo que concluye la demostración.
 
-\section*{1. Ejercicios}
+\section{Ejercicios}
 \begin{enumerate}
   \item Calcular la norma 2 de la matriz $A=\left(\begin{array}{ll}3 & 0 \\ 4 & 5\end{array}\right)$.
   \item Se quiere estimar la norma 2 de una matriz $A \in \mathbb{R}^{3 \times 3}$ como el máximo del valor $\|A x\|_{2} /\|x\|_{2}$ entre varios vectores $x \in \mathbb{R}^{3}$ no nulos generados al azar. Hacer un programa que pida el ingreso de una matriz $A$ y luego
@@ -1587,11 +1543,10 @@ Utilizando el comando lu de Matlab, verificar que la eliminación gaussiana pued
 Mostrar que es definida positiva y calcular su descomposición de Cholesky.\\
 23. Estimar cuántas operaciones se requieren para hallar la descomposición de Cholesky de una matriz simétrica y definida positiva $A \in \mathbb{R}^{n \times n}$.
 
-\section*{Capítulo 3}
-\section*{Resolución de sistemas lineales}
+\chapter{Resolución de sistemas lineales}
 El objetivo de este capítulo es estudiar diferentes formas de resolver un sistema lineal de $n$ ecuaciones con $n$ incógnitas. Para dar solución a este problema se pueden emplear dos grandes subclases de métodos; los directos y los iterados. Dentro de los métodos de cálculo directo se encuentran el de triangulación de Gauss, el de descomposición LU y el método de Cholesky. Entre los métodos iterativos más usuales encontramos el de Jacobi, Gauss-Seidel y el de relajación.
 
-\section*{1. Métodos directos}
+\section{Métodos directos}
 1.1. Triangulación de Gauss y descomposición LU. El proceso de triangulación de Gauss puede verse como el resultado que se obtiene de multiplicar por matrices de la siguiente forma,
 
 Primer paso: Multiplicar por
@@ -1884,7 +1839,7 @@ $$
 \left|l_{k j}\right| \leq \sqrt{a_{k k}}
 $$
 
-\section*{2. Métodos iterativos}
+\section{Métodos iterativos}
 Estos métodos convienen en general para matrices ralas (i.e. con muchos ceros). Este tipo de matrices aparecen, por ejemplo, cuando se discretizan ecuaciones diferenciales.
 
 Como antes el objetivo es resolver
@@ -3427,7 +3382,7 @@ Si $\omega \in \mathbb{R}$, una condición necesaria para que el método converj
 
 El problema consiste en encontrar el parámetro óptimo (o cercano al óptimo) para acelerar la convergencia. Para ciertas clases de matrices esto puede hacerse (ver libro Varga, Ortega o Smith).
 
-\section*{3. Ejercicios}
+\section{Ejercicios}
 \begin{enumerate}
   \item Escribir un programa que implemente el método de Jacobi y otro el de Gauss-Seidel con las siguientes condiciones:
 \end{enumerate}
@@ -3588,8 +3543,7 @@ a) Demostrar que el método de Jacobi converge para todo dato inicial. Verificar
 b) Sea $J$ la matriz de iteración. Hallar las normas $1, \infty$ y 2 de $J$. Hallar una norma $\|\|$ en la cual $\|J\|$ sea $<1$.
 \end{enumerate}
 
-\section*{Capítulo 4}
-\section*{Resolución de ecuaciones no lineales}
+\chapter{Resolución de ecuaciones no lineales}
 En muchos problemas, aparece en forma natural, la necesidad de calcular el valor de $x$ donde una función $f$ se anula, es decir, una raíz de $f$. En general, con las herramientas analíticas que se usan para estudiar y graficar funciones suaves (derivables) sólo podemos analizar si hay un intervalo $[a, b]$ donde el gráfico de $f$ cruza el eje $x$.
 
 En este capítulo, veremos distintos métodos que nos permitirán aproximar el valor de una raíz, éste valor suele hallarse por aproximaciones sucesivas y por ende los métodos a utilizar son iterativos. En muchas ocasiones, sólo tiene sentido encontrar una solución aproximada. A veces, el cálculo exacto no es posible ya sea porque se trata de una raíz irracional ( $f(x)=x^{2}-2$ ) o porque la función viene dada por coeficientes cuyos valores se conocen sólo en forma aproximada. Lo importante al utilizar métodos que estimen el valor deseado es, como venimos marcando en estas notas, poder controlar el error que se comete al utilizar un valor aproximado en lugar del exacto.
@@ -3606,7 +3560,7 @@ Antes de describir el primer método de estas notas, el de bisección, recordamo
 
 Teorema 4.1. Bolzano Sea $f:[a, b] \rightarrow \mathbb{R}$ continua en $[a, b]$. Si $f(a) f(b)<0$ (o sea $f(a)$ y $f(b)$ tienen distinto signo) entonces existe alguna raíz de $f$ en el intervalo $[a, b]$.
 
-\section*{1. Método de bisección}
+\section{Método de bisección}
 Este método, que se apoya en la idea geométrica del teorema de Bolzano, permite construir una sucesión $\left(x_{n}\right)_{n \in \mathbb{N}}$ que converge a la solución de $f(x)=0$ de la siguiente manera.
 
 Supongamos que $f(a) f(b)<0$. Calculemos $c=\frac{a+b}{2}$. Supongamos, por ejemplo, que $f(a)>0$ y $f(b)<0$, entonces
@@ -3736,7 +3690,7 @@ $$
 
 En consecuencia se reduce $\frac{1}{10}$ en tres o cuatro pasos (se gana una cifra en tres o cuatro pasos).
 
-\section*{2. Método regula falsi}
+\section{Método regula falsi}
 Este método llamado "regula falsi" o de falsa posición puede verse tanto como una variante del método de bisección como del método Newton-Raphson, que veremos en la próxima sección.
 
 Supongamos, nuevamente, que tenemos una función $f:[a, b] \rightarrow \mathbb{R}$ continua que verifica $f(a) f(b)<0$ (entonces existe una raíz, $r$, en $[a, b]$, por el teorema de Bolzano) y supongamos que la raíz es única en ese intervalo.
@@ -3767,7 +3721,7 @@ Observemos que puede suceder que $\left|I_{n}\right|$ no tienda a cero, pero sin
 \end{center}
 \end{figure}
 
-\section*{3. Método de Newton-Raphson}
+\section{Método de Newton-Raphson}
 La idea del método es "ir por la tangente" como se describe a continuación.\\
 Se empieza con $x_{0}$. Se traza la tangente en $x_{0}$ y se define $x_{1}$ como la intersección de la tangente con el eje $x$. Luego se traza la tangente por $x_{1}$ y se toma $x_{2}$ la intersección de la tangente con el eje $x$, y así sucesivamente. Esto genera una sucesión $x_{n}$ como muestra la Figura 4.2.
 
@@ -4053,7 +4007,7 @@ Si $f$ es monótona decreciente, una demostración análoga prueba el resultado.
 
 Si bien este teorema es bastante claro geométricamente para funciones definidas en $\mathbb{R}$, su interés radica en su extensión a $\mathbb{R}^{N}$.
 
-\section*{4. Método de punto fijo}
+\section{Método de punto fijo}
 El método de Newton puede verse como un caso particular del método de punto fijo.\\
 La idea es reemplazar la ecuación $f(x)=0$ por otra de la forma $x=g(x)$ de manera que la solución de ésta sea la solución del problema original.
 
@@ -4171,7 +4125,7 @@ $$
 
 o sea, $g\left(I_{\varepsilon}\right) \subset I_{\varepsilon}$, y podemos aplicar el teorema anterior en $I_{\varepsilon}$.
 
-\section*{5. Método de la secante}
+\section{Método de la secante}
 En este método tenemos que $x_{n+1}$ es función de $x_{n}$ y de $x_{n-1}$. La idea es la misma que en el método "regula falsi", trazar la secante, pero este método es diferente pues se usan las dos últimas aproximaciones $x_{n-1}$ y $x_{n}$ en lugar de encerrar la raíz como en "regula falsi". Para empezar hay que dar dos valores $x_{0}$ y $x_{1}$.
 
 La ecuación de la secante que une los puntos $\left(x_{n-1}, f\left(x_{n-1}\right)\right)$ y $\left(x_{n}, f\left(x_{n}\right)\right)$ es
@@ -4401,7 +4355,7 @@ para $n$ grande.
 Ahora veamos una idea intuitiva de la demostración directamente.\\
 Si suponemos $\left|e_{n+1}\right| \sim\left|e_{n}\right|^{p}$ tenemos $\left|e_{n+1}\right| \sim\left|e_{n}\right|^{p} \sim\left|e_{n-1}\right|^{p^{2}}$ y de la relación entre $e_{n+1}, e_{n}$ y $e_{n-1}$ se tiene $\left|e_{n-1}\right|^{p^{2}} \sim\left|e_{n-1}\right|^{p}\left|e_{n-1}\right|$. O sea, $\left|e_{n-1}\right|^{p^{2}-p-1} \sim$ cte. Luego $p>0$ tiene que ser solución de $p^{2}-p-1=0$ y entonces $p=\frac{1+\sqrt{5}}{2}=1,618 \ldots$.
 
-\section*{6. Ejercicios}
+\section{Ejercicios}
 \begin{enumerate}
   \item Usar el método de bisección para hallar una raíz positiva de la ecuación trascendente:
 \end{enumerate}
@@ -4532,13 +4486,12 @@ a) Verificar que si $x_{0}>1$ entonces la sucesión $\left\{x_{n}\right\}$ es mo
 b) Dar un algoritmo para aproximar la raíz de $f$ que converja cuadráticamente.\\
 21. Sea $f$ una función $C^{1}$ en las condiciones del método N-R. Sea $g(x)=x-\frac{f(x)}{f^{\prime}(x)}$. Mostrar que el método N-R es un método de punto fijo.
 
-\section*{Capítulo 5}
-\section*{Interpolación}
+\chapter{Interpolación}
 El objetivo de este capítulo es estudiar cómo puede aproximarse una función por polinomios. Una forma de hacer esto es construir los polinomios de manera que coincidan con la función dada en algunos puntos predeterminados, lo que recibe el nombre de interpolación polinomial. Analizaremos distintos métodos para resolver este problema y estudiaremos el error que se comete al reemplazar una función por un polinomio interpolante.
 
 Hay diversos motivos para estudiar este problema. Por un lado, el polinomio interpolante puede utilizarse para reconstruir una función $f$ a partir de una tabla de valores. Por otra parte, es una herramienta fundamental para integración y diferenciación numérica, como veremos más adelante.
 
-\section*{1. Interpolación de Lagrange}
+\section{Interpolación de Lagrange}
 En lo que sigue, si $n \in \mathbb{N}_{0}$, llamaremos $\mathcal{P}_{n}$ al conjunto de polinomios de grado menor o igual que $n$, incluyendo el polinomio nulo.
 
 Supongamos que se sabe que la tabla de valores
@@ -4686,7 +4639,7 @@ En este caso, sin encontrar explícitamente el polinomio, si tenemos en cuenta l
 \caption{Figura 5.1. Interpolación de \$f(x)=x\^{}\{\textbackslash frac\{2}\{3\}\}\$ en $[-1,1]$, (11 puntos equiespaciados)\}\end{center}
 \end{figure}
 
-\section*{2. Error de interpolación}
+\section{Error de interpolación}
 Cuando los datos obtenidos corresponden con datos de una función $f$ definida en $[a, b]$ y $x_{0}$, $x_{1}, \ldots, x_{n} \in[a, b]$ son $n+1$ puntos distintos, el polinomio interpolador a encontrar será un polinomio $p_{n} \in \mathcal{P}_{n}$ que coincida con $f$ en dichos puntos, es decir $p_{n}$ verifica que
 
 $$
@@ -4751,7 +4704,7 @@ Si se eligen 10 puntos equiespaciados se obtiene un polinomio como muestra la Fi
 \caption{Figura 5.2. Interpolación de \$f(x)=\textbackslash cos (x)\^{}\{3}\$ en [-3,3], (10 puntos equiespaciados)\}\end{center}
 \end{figure}
 
-\section*{3. Forma de Newton}
+\section{Forma de Newton}
 La forma de Newton es conveniente para calcular el polinomio, en $\mathcal{P}_{n}$, que interpola a una función $f$ en $x_{0}, \ldots, x_{n-1}, x_{n}$ una vez conocido el polinomio interpolador de $f$ en $x_{0}, \ldots, x_{n-1}$.
 
 La forma de Newton del polinomio interpolador puede verse como una generalización del polinomio de Taylor asociado a una función. En esta construcción aparecen las diferencias divididas que presentamos a continuación.
@@ -4914,7 +4867,7 @@ $$
 
 lo que junto con la fórmula del error dada en el Teorema 5.4 concluye la demostración.
 
-\section*{4. Polinomios de Tchebychev - Minimización del Error}
+\section{Polinomios de Tchebychev - Minimización del Error}
 Una pregunta natural es cómo elegir los puntos de interpolación para optimizar la aproximación. El Teorema 5.4 nos dice que el error depende de $f^{(n+1)}$ en algún punto del intervalo y de los puntos $x_{j}$ a través del polinomio $W_{n+1}(x)=\left(x-x_{0}\right)\left(x-x_{1}\right) \cdots\left(x-x_{n}\right)$. Como se pretende obtener una buena aproximación sin tener información sobre la función $f$, la idea es elegir los puntos de manera tal que $\left\|W_{n+1}(\cdot)\right\|_{\infty}$ sea mínima. Este problema, que en principio parece complicado, fue resuelto por Tchebychev en el siglo XIX introduciendo una sucesión de polinomios, que hoy llevan su nombre.
 
 Para simplificar la presentación resolveremos el problema para funciones definidas en el intervalo $[-1,1]$. Más adelante veremos que se puede trasladar la construcción a cualquier intervalo $[a, b]$ mediante un cambio de variables.
@@ -5194,7 +5147,7 @@ $$
 
 arbitrarios en $[a, b]$, existe $f$ continua tal que $\left\|f-p_{n}\right\|_{\infty} \nrightarrow 0$, donde $p_{n}$ es el polinomio interpolador en $x_{0}^{n}, \ldots, x_{n}^{n}$.
 
-\section*{5. Interpolación de Hermite}
+\section{Interpolación de Hermite}
 En algunos casos interesa también considerar junto con los valores de una función $f$ datos relacionados con sus derivadas. Por ejemplo, puede buscarse un polinomio $p$ que interpola a $f$ en determinados puntos y que además $p^{\prime}$ coincida con $f^{\prime}$ en algunos de esos puntos. Más en general, se tiene el siguiente teorema que fue probado por Hermite.
 
 Teorema 5.17. Dada una función $f$, puntos $x_{0}, \ldots, x_{k}$ y $m_{0}, \ldots, m_{k} \in \mathbb{N}_{0}$ tales que $m_{0}+\ldots+ m_{k}=n+1$, existe un único polinomio $p \in \mathcal{P}_{n}$ que satisface
@@ -5279,7 +5232,7 @@ $$
 
 Esto generaliza la forma de Newton para $x_{i}$ no todos distintos.
 
-\section*{6. Interpolación por polinomios a trozos}
+\section{Interpolación por polinomios a trozos}
 En muchos casos para lograr una mejor aproximación es conveniente utilizar funciones polinomiales a trozos como interpolantes. De esta manera se parte el intervalo de manera tal que en cada subintervalo se elige un polinomio distinto que interpola los datos. Por ejemplo, al interpolar con polinomios de grado uno a trozos, quedan poligonales.
 
 \begin{figure}[h]
@@ -5443,7 +5396,7 @@ Por ejemplo podemos elegir $y_{0}=y_{n}=0$ para que se satisfagan las condicione
 
 Observemos que en general $S^{\prime}\left(x_{j}\right) \neq f^{\prime}\left(x_{j}\right)$ y $S^{\prime \prime}\left(x_{j}\right) \neq f^{\prime \prime}\left(x_{j}\right)$.
 
-\section*{7. Ejercicios}
+\section{Ejercicios}
 \begin{enumerate}
   \item Para cada uno de los conjuntos de datos dados en las siguientes tablas calcular el polinomio $p(x)$ interpolador de grado menor o igual que 3, en la forma de Lagrange. Verificar utilizando el comando polyfit de Matlab. Graficar el polinomio interpolador, usando el comando polyval.
 \end{enumerate}
@@ -5603,8 +5556,7 @@ $y$ & 1 & 1 & 0.5 & 4 \\
   \item Utilizando Matlab, encontrar y graficar una función del tipo $e^{a_{4} x^{4}+a_{3} x^{3}+\cdots+a_{0}}$ que interpole a la función $f(x)=1 / x$ en 5 nodos equiespaciados en el intervalo $[1,10]$.
 \end{enumerate}
 
-\section*{Capítulo 6}
-\section*{Polinomios ortogonales y aproximación por cuadrados mínimos}
+\chapter{Polinomios ortogonales y aproximación por cuadrados mínimos}
 En el capítulo anterior hemos discutido cómo aproximar una función por polinomios que interpolan a la función misma y/o a sus derivadas en algunos puntos. Hasta ahora, los métodos analizados nos permiten construir polinomios de grado $n$ a partir de $n+1$ datos. Cierto es que, en un problema a modelizar, cuantos más datos se conocen es de esperar que se pueda lograr mayor precisión. Pero, como vimos, muchas veces polinomios de alto grado producen efectos no deseados como por ejemplo grandes oscilaciones. En este capítulo consideraremos otra forma de aproximar funciones conocida como el método de cuadrados mínimos. Este método nos permitirá, cuando se trate de aproximar por polinomios, contemplar una tabla de valores sin sujetar el grado del polinomio a la cantidad de datos. También será posible considerar funciones más generales que ajusten de manera natural los valores predeterminados.
 
 En general, en esta clase de problemas uno sabe a priori a qué tipo de función corresponden los datos. Una situación frecuente es la de aproximar una tabla de más de dos valores por una recta (como muestra la Figura 6.1). Es decir, se tienen valores $\left(x_{i}, y_{i}\right), i=0, \ldots, n$ y se quiere encontrar una recta que ajuste estos datos lo mejor posible. Si escribimos la ecuación de la recta como $y=m x+b$ nuestro problema consiste en encontrar valores de $m$ y $b$ que hagan que el error $\left|y_{i}-\left(m x_{i}+b\right)\right|$ sea lo mas chico posible para todo $i$. Por ejemplo, una manera de lograr esto sería pedir que $m$ y $b$ minimicen
@@ -5643,7 +5595,7 @@ $$
 \int_{a}^{b} w(x)(f(x)-p(x))^{2} d x
 $$
 
-\section*{1. Preliminares}
+\section{Preliminares}
 Nos dedicaremos especialmente al estudio de aproximaciones por polinomios. Comenzamos esta sección presentando un resultado clásico de Weierstrass que muestra que toda función continua puede aproximarse uniformemente por polinomios, en todo intervalo cerrado y acotado.
 
 Teorema 6.1. (Weierstrass) Sea $f \in C[a, b]$. Para todo $\varepsilon>0$ existe un polinomio $p$ tal que
@@ -5944,7 +5896,7 @@ en particular, tomado $s=\widetilde{y}-y \in S$ obtenemos $\|\widetilde{y}-y\|=0
 
 Veremos más adelante que cuando $S$ es de dimensión finita siempre existe $y$ en las condiciones del teorema anterior. Este $y$ se llama proyección ortogonal de $x$ sobre $S$.
 
-\section*{2. Solución de los Problemas de Aproximación}
+\section{Solución de los Problemas de Aproximación}
 Ahora sí, estamos en condiciones de describir los métodos para hallar las soluciones de los problemas A y B planteados. En lo que sigue de este capítulo trabajaremos sobre espacios con un producto interno.
 
 El primer problema se puede reformular de la siguiente manera: Se considera en $\mathbb{R}^{n}$ el producto escalar dado por los pesos $w_{0}, \ldots, w_{n}$, es decir,
@@ -6413,7 +6365,7 @@ lo que resulta del hecho de que $x q_{n-2}-q_{n-1}$ es un polinomio de grado men
 
 Observación 6.21. Los productos internos asociados a los problemas A y B satisfacen trivialmente la hipótesis del teorema.
 
-\section*{3. Ejercicios}
+\section{Ejercicios}
 \begin{enumerate}
   \item a) Encontrar el polinomio de grado 1 que aproxima en el sentido de cuadrados mínimos la siguiente tabla de datos:
 \end{enumerate}
@@ -6592,8 +6544,7 @@ Probar que el polinomio $\left[\sum_{k=1}^{m} c_{k} T_{k-1}(x)\right]-0,5 c_{1}$
 (Sugerencia: usar Ejercicio 3).\\
 Notar que esta fórmula proporciona una manera más directa de encontrar el polinomio interpolador en los ceros de $T_{m}$.
 
-\section*{Capítulo 7}
-\section*{Integración numérica}
+\chapter{Integración numérica}
 En este capítulo estudiamos métodos para aproximar el valor de una integral definida en un intervalo $[a, b]$. En los cursos elementales de Cálculo se aprende que el valor $\int_{a}^{b} f(x) d x$ puede obtenerse a partir de una primitiva de $f$ mediante la regla de Barrow. Sin embargo, en muchos casos no es posible encontrar una primitiva expresable en términos de funciones conocidas. Un ejemplo es el de la integral $\int_{a}^{b} e^{-x^{2}} d x$ que juega un papel muy importante en la teoría de probabilidades. Puede demostrarse que la función $e^{-x^{2}}$ no tiene primitiva expresable mediante composiciones y operaciones algebraicas de las funciones conocidas. Más allá de este ejemplo clásico, esta situación se da en una gran variedad de funciones.
 
 En consecuencia será necesario recurrir a las llamadas reglas de integración numérica o de cuadratura. La idea básica para construir estas reglas es reemplazar la función por un polinomio puesto que:
@@ -6648,7 +6599,7 @@ Hay, esencialmente, dos maneras de determinar una fórmula de cuadratura como en
   \item Se buscan a la vez los nodos $\left\{x_{0}, x_{1}, \ldots, x_{n}\right\}$ y los pesos $\left\{A_{0}, A_{1}, \ldots, A_{n}\right\}$. Este método se conoce como Fórmulas de cuadratura gaussiana.
 \end{itemize}
 
-\section*{1. Fórmulas de Newton-Côtes}
+\section{Fórmulas de Newton-Côtes}
 Si queremos aproximar la integral una función continua $f:[a, b] \rightarrow \mathbb{R}$ por la integral de un polinomio interpolador de grado $n$, probablemente la elección más natural para los nodos $x_{j}$ es tomarlos equiespaciados en el intervalo $[a, b]$. para esto consideramos $h=(b-a) / n$ y $x_{j}=a+j h$ con $j=0, \ldots, n$. Una fórmula de aproximación basada en estos puntos se conoce como "formula de Newton-Côtes cerrada" y si los puntos son tomados como $x_{j}=a+j h$ con $j=1, \ldots, n-1$ se llama "fórmula de Newton-Côtes abierta" (no incluye a los extremos del intervalo). Estas fórmulas serán exactas cuando el polinomio interpolador coincida con la función $f$, esto es, para todo polinomio en $\mathcal{P}_{n}$.\\
 1.1. Fórmulas simples de Newton-Côtes. Veamos primero las fórmulas de cuadratura si se considera el intervalo $[a, b]$ considerando nodos equiespaciados. Comencemos interpolando por una recta o por una función cuadrárica.
 
@@ -6898,7 +6849,7 @@ $$
 
 Luego, la fórmula de Simpson cerrada tiene grado de exactitud $k=3$. Lo mismo sucederá para la fórmula abierta.
 
-\section*{2. Estimación del error}
+\section{Estimación del error}
 En lo que sigue notaremos por $I(f)=\int_{a}^{b} f(x) d x$. Una vez obtenida una regla de cuadratura $Q(f)$ surge la pregunta de qué se puede decir sobre el error cometido $R(f)=I(f)-Q(f)$.
 
 La forma más usual de aproximar integrales es mediante las llamadas reglas de integración compuestas que veremos más adelante, las cuales se basan en partir el intervalo $[a, b]$ en intervalos chicos y aplicar en cada uno de ellos alguna de las reglas construídas mediante interpolación. Por esta razón nos interesa saber como es el error en términos de la longitud del intervalo donde se aplica la regla. El siguiente teorema nos da un resultado general que nos dice que el error depende del grado de exactitud de la regla.
@@ -7122,7 +7073,7 @@ $$
 |R(f)| \leq \frac{1}{90}\left(\frac{1}{2}\right)^{5} 20=0,006944 \ldots
 $$
 
-\section*{3. Fórmulas de cuadratura compuestas}
+\section{Fórmulas de cuadratura compuestas}
 Si queremos aumentar la precisión al aproximar $\int_{a}^{b} f(x) d x$, podemos aumentar el número de nodos. Esto es, considerar $n+1$ nodos y el polinomio de $\mathcal{P}_{n}$ que interpola a $f$ en esos nodos, con $n \in \mathbb{N}$ grande. Esto no siempre es conducente. Como vimos en el Capítulo 5, aumentar el grado del polinomio interpolador puede producir errores grandes en la aproximación, los que podrían trasladarse al cálculo de la integral. Otra posibilidad es partir el intervalo $[a, b]$ en pequeños subintervalos y en cada uno de estos aplicar una aproximación del tipo Trapecios o Simpson. Este método que vamos a desarrollar en esta sección es el más usual y se conoce como "cuadratura compuesta".
 
 La idea general es como sigue. Partimos el intervalo $[a, b]$ en subintervalos eligiendo puntos $x_{j}$ con $a=x_{0}<x_{1}<\ldots<x_{n}=b$. Sabemos que
@@ -7376,7 +7327,7 @@ $$
 
 para los cuales se debe calcular el valor de $f(x, y)$.
 
-\section*{4. Cuadratura Gaussiana}
+\section{Cuadratura Gaussiana}
 Según vimos en las secciones anteriores, la precisión de una regla de cuadratura depende de su grado de exactitud. En consecuencia resulta natural plantearse el problema de cómo elegir los puntos para optimizar el grado de exactitud. Es decir, fijada la cantidad de puntos, $n+1$, queremos encontrar $\left\{x_{0}, x_{1}, \ldots, x_{n}\right\}$ de tal forma que la regla construída interpolando en esos puntos tenga el mayor grado de exactitud posible. Este problema fue estudiado y resuelto por Gauss por lo que una regla de este tipo se conoce como cuadratura gaussiana.
 
 Observemos que si consideramos una regla de la forma
@@ -7703,7 +7654,7 @@ $$
 
 Notar que las constantes obtenidas para $n=0$ y $n=1$ son menores que las que se obtienen en los Teoremas 7.13 y 7.15 , que corresponden a reglas del mismo grado de exactitud, respectivamente.
 
-\section*{5. Convergencia de los métodos de cuadratura}
+\section{Convergencia de los métodos de cuadratura}
 Si bien la forma más usual de obtener una buena aproximación de una integral consiste en usar alguna regla compuesta con un número de nodos suficiente, otra posibilidad es aumentar la precisión construyendo reglas basadas en interpolación de Lagrange en un número creciente de puntos. Por lo tanto es natural preguntarse si este procedimiento converge a la integral cuando el número de nodos tiende a infinito. Esto es, si $Q_{n}(f)$ es la aproximación de $\int_{a}^{b} f(x) w(x) d x$ que se hace a través de un polinomio que interpola a $f$ en $n+1$ nodos, jvale que $Q_{n}(f) \rightarrow \int_{a}^{b} f(x) w(x) d x$ cuando $n \rightarrow \infty$ ? En esta sección veremos una condición para que esto suceda. Esta condición se satisface en particular para las reglas gaussianas.
 
 Una fórmula de cuadratura
@@ -7832,7 +7783,7 @@ Demostración. Es consecuencia inmediata de los Corolarios 7.26 y 7.35.
 
 Para terminar esta sección queremos comentar que las hipótesis del Teorema 7.33 no se aplican al caso de puntos equiespaciados (o sea a las fórmulas de Newton-Côtes). En efecto, se sabe que en este caso los pesos $A_{j}^{(n)}$ cambian de signo y, más aún, cuando $n$ crece no están acotados. Por lo tanto existen funciones continuas para las cuales este procedimiento para aproximar la integral no converge.
 
-\section*{6. Ejercicios}
+\section{Ejercicios}
 \begin{enumerate}
   \item Usar las fórmulas cerradas de Newton-Côtes de dos y tres puntos (reglas de trapecios y de Simpson, respectivamente) para calcular las integrales:
 \end{enumerate}
@@ -7958,8 +7909,7 @@ a) Repetir el procedimiento hecho en el Ejemplo 7.22 y dar la fórmula correspon
 Sugerencia: considerar $F(x)=\int_{0}^{x} f(x, y) d y$.\\
 b) Probar que si $D$ es el triángulo de vértices $(0,0),(0,1),(1,0)$ la fórmula anterior es exacta para $f(x, y)=x^{2}+y^{2}$.
 
-\section*{Capítulo 8}
-\section*{Resolución de ecuaciones diferenciales ordinarias}
+\chapter{Resolución de ecuaciones diferenciales ordinarias}
 En este capítulo abordaremos el problema de resolver ecuaciones diferenciales con valores iniciales. Es decir, desarrollaremos métodos numéricos para aproximar una función conociendo una ecuación que involucra sus derivadas.
 
 Se llama orden de una ecuación al máximo orden de derivada que aparece en ella. En su forma más general una ecuación diferencial de orden $n$, puede escribirse como
@@ -8091,7 +8041,7 @@ $$
 
 Los métodos numéricos para aproximar la solución de una ecuación diferencial ordinaria se dividen en dos grandes clases: métodos de un paso y métodos multipaso.
 
-\section*{1. Métodos de un paso}
+\section{Métodos de un paso}
 Nuestro estudio de aproximaciones numéricas para ecuaciones ordinarias empieza con los métodos conocidos como de un solo paso.
 
 Dado el problema (8.2) buscamos una aproximación de $x(t)$ en un cierto intervalo $\left[t_{0}, T\right]$. Para esto buscaremos una forma de generar $n$ valores $x_{1}, \ldots, x_{n}$ que aproximen $x\left(t_{1}\right), \ldots, x\left(t_{n}\right)$ con\\
@@ -8507,7 +8457,7 @@ $t$ & $x=\sqrt{t}$ & Runge-Kutta 2 & Runge-Kutta 4 \\
 
 Cuadro 8.3. Métodos de Runge-Kutta, $x^{\prime}=\frac{1}{2 x} ; x(1)=1$; paso $h=0,25$.
 
-\section*{2. Análisis del error y convergencia}
+\section{Análisis del error y convergencia}
 El objetivo de esta sección es analizar cuál es el error que se comete al utilizar los métodos numéricos para aproximar la solución de una ecuación de la forma (8.2). Para esto introducimos dos conceptos, el error de truncamiento local y el error global. El primero corresponde al error que se cometería al aproximar el valor de $x(t+h)$ si se conociera el valor exacto de $x(t)$, mientras que el segundo corresponde al error que se acumula al aplicar $n$ pasos de un método, es decir $x\left(t_{n}\right)-x_{n}$.
 
 \begin{figure}[h]
@@ -8868,7 +8818,7 @@ y_{i+1}=y_{i}+h\left(x_{i}^{2}-t_{i} y_{i}\right) .
 \end{array}\right.
 $$
 
-\section*{3. Métodos multipaso lineales}
+\section{Métodos multipaso lineales}
 Hasta ahora para aproximar las soluciones de $x^{\prime}(t)=f(t, x(t))$ nos basamos en el punto inmediato anterior para calcular el siguiente, es decir, empezando en $x_{0}$ las iteraciones de un paso son de la forma
 
 $$
@@ -9349,7 +9299,7 @@ $$
 
 El método resulta con orden de convergencia $p=4$.
 
-\section*{4. Ejercicios}
+\section{Ejercicios}
 \begin{enumerate}
   \item Utilizar el método de Euler para resolver $\begin{cases}x^{\prime}=2 x & \text { en }[0,1], \\ x(0)=1 . & \end{cases}$ empleando pasos $h=0,1, h=0,05$ y $h=0,01$. Graficar las tres soluciones numéricas obtenidas junto con la solución exacta.
   \item Hacer el mapa de curvas integrales en la región $[0,10] \times[0,10]$ de la ecuación diferencial
